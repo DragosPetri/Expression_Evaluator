@@ -17,7 +17,6 @@ private:
     int tail;
     int next_empty;
     std::tuple<int,int,TElem> *arr;
-//piciorus
 
 public:
     //constructor
