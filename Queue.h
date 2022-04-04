@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <tuple>
 using namespace std;
 
 //DO NOT CHANGE THIS PART
@@ -8,7 +10,11 @@ typedef int TElem;
 class Queue
 {
 private:
-	
+	int cap;
+    int size;
+    int head;
+    int first_empty;
+    std::tuple<int, TElem> *arr;
 
 public:
 	Queue();
