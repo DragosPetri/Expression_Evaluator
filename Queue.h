@@ -21,7 +21,7 @@ public:
 
 	//pushes an element to the end of the queue
 	void push(TElem e);
-
+    void print();
 	//returns the element from the front of the queue
 	//throws exception if the queue is empty
 	TElem top() const;

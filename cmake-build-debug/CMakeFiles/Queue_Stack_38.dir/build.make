@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Home\Desktop\DSA\DSA\LABOR34
+CMAKE_SOURCE_DIR = C:\FACULTATE\DSA\DSA\LABOR3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug
+CMAKE_BINARY_DIR = C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Queue_Stack_38.dir/depend.make
@@ -72,76 +72,76 @@ CMakeFiles/Queue_Stack_38.dir/App.cpp.obj: CMakeFiles/Queue_Stack_38.dir/flags.m
 CMakeFiles/Queue_Stack_38.dir/App.cpp.obj: CMakeFiles/Queue_Stack_38.dir/includes_CXX.rsp
 CMakeFiles/Queue_Stack_38.dir/App.cpp.obj: ../App.cpp
 CMakeFiles/Queue_Stack_38.dir/App.cpp.obj: CMakeFiles/Queue_Stack_38.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Queue_Stack_38.dir/App.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/App.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\App.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\App.cpp.obj -c C:\Users\Home\Desktop\DSA\DSA\LABOR34\App.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Queue_Stack_38.dir/App.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/App.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\App.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\App.cpp.obj -c C:\FACULTATE\DSA\DSA\LABOR3\App.cpp
 
 CMakeFiles/Queue_Stack_38.dir/App.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Queue_Stack_38.dir/App.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Home\Desktop\DSA\DSA\LABOR34\App.cpp > CMakeFiles\Queue_Stack_38.dir\App.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FACULTATE\DSA\DSA\LABOR3\App.cpp > CMakeFiles\Queue_Stack_38.dir\App.cpp.i
 
 CMakeFiles/Queue_Stack_38.dir/App.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Queue_Stack_38.dir/App.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Home\Desktop\DSA\DSA\LABOR34\App.cpp -o CMakeFiles\Queue_Stack_38.dir\App.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FACULTATE\DSA\DSA\LABOR3\App.cpp -o CMakeFiles\Queue_Stack_38.dir\App.cpp.s
 
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/flags.make
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/includes_CXX.rsp
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj: ../ExtendedTest.cpp
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.obj -c C:\Users\Home\Desktop\DSA\DSA\LABOR34\ExtendedTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.obj -c C:\FACULTATE\DSA\DSA\LABOR3\ExtendedTest.cpp
 
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Home\Desktop\DSA\DSA\LABOR34\ExtendedTest.cpp > CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FACULTATE\DSA\DSA\LABOR3\ExtendedTest.cpp > CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.i
 
 CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Queue_Stack_38.dir/ExtendedTest.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Home\Desktop\DSA\DSA\LABOR34\ExtendedTest.cpp -o CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FACULTATE\DSA\DSA\LABOR3\ExtendedTest.cpp -o CMakeFiles\Queue_Stack_38.dir\ExtendedTest.cpp.s
 
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj: CMakeFiles/Queue_Stack_38.dir/flags.make
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj: CMakeFiles/Queue_Stack_38.dir/includes_CXX.rsp
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj: ../Queue.cpp
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj: CMakeFiles/Queue_Stack_38.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\Queue.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\Queue.cpp.obj -c C:\Users\Home\Desktop\DSA\DSA\LABOR34\Queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/Queue.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\Queue.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\Queue.cpp.obj -c C:\FACULTATE\DSA\DSA\LABOR3\Queue.cpp
 
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Queue_Stack_38.dir/Queue.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Home\Desktop\DSA\DSA\LABOR34\Queue.cpp > CMakeFiles\Queue_Stack_38.dir\Queue.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FACULTATE\DSA\DSA\LABOR3\Queue.cpp > CMakeFiles\Queue_Stack_38.dir\Queue.cpp.i
 
 CMakeFiles/Queue_Stack_38.dir/Queue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Queue_Stack_38.dir/Queue.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Home\Desktop\DSA\DSA\LABOR34\Queue.cpp -o CMakeFiles\Queue_Stack_38.dir\Queue.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FACULTATE\DSA\DSA\LABOR3\Queue.cpp -o CMakeFiles\Queue_Stack_38.dir\Queue.cpp.s
 
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/flags.make
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/includes_CXX.rsp
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj: ../ShortTest.cpp
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj: CMakeFiles/Queue_Stack_38.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.obj -c C:\Users\Home\Desktop\DSA\DSA\LABOR34\ShortTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.obj -c C:\FACULTATE\DSA\DSA\LABOR3\ShortTest.cpp
 
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Home\Desktop\DSA\DSA\LABOR34\ShortTest.cpp > CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FACULTATE\DSA\DSA\LABOR3\ShortTest.cpp > CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.i
 
 CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Queue_Stack_38.dir/ShortTest.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Home\Desktop\DSA\DSA\LABOR34\ShortTest.cpp -o CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FACULTATE\DSA\DSA\LABOR3\ShortTest.cpp -o CMakeFiles\Queue_Stack_38.dir\ShortTest.cpp.s
 
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj: CMakeFiles/Queue_Stack_38.dir/flags.make
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj: CMakeFiles/Queue_Stack_38.dir/includes_CXX.rsp
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj: ../Stack.cpp
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj: CMakeFiles/Queue_Stack_38.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\Stack.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\Stack.cpp.obj -c C:\Users\Home\Desktop\DSA\DSA\LABOR34\Stack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Queue_Stack_38.dir/Stack.cpp.obj -MF CMakeFiles\Queue_Stack_38.dir\Stack.cpp.obj.d -o CMakeFiles\Queue_Stack_38.dir\Stack.cpp.obj -c C:\FACULTATE\DSA\DSA\LABOR3\Stack.cpp
 
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Queue_Stack_38.dir/Stack.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Home\Desktop\DSA\DSA\LABOR34\Stack.cpp > CMakeFiles\Queue_Stack_38.dir\Stack.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FACULTATE\DSA\DSA\LABOR3\Stack.cpp > CMakeFiles\Queue_Stack_38.dir\Stack.cpp.i
 
 CMakeFiles/Queue_Stack_38.dir/Stack.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Queue_Stack_38.dir/Stack.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Home\Desktop\DSA\DSA\LABOR34\Stack.cpp -o CMakeFiles\Queue_Stack_38.dir\Stack.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FACULTATE\DSA\DSA\LABOR3\Stack.cpp -o CMakeFiles\Queue_Stack_38.dir\Stack.cpp.s
 
 # Object files for target Queue_Stack_38
 Queue_Stack_38_OBJECTS = \
@@ -163,7 +163,7 @@ Queue_Stack_38.exe: CMakeFiles/Queue_Stack_38.dir/build.make
 Queue_Stack_38.exe: CMakeFiles/Queue_Stack_38.dir/linklibs.rsp
 Queue_Stack_38.exe: CMakeFiles/Queue_Stack_38.dir/objects1.rsp
 Queue_Stack_38.exe: CMakeFiles/Queue_Stack_38.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Queue_Stack_38.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Queue_Stack_38.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Queue_Stack_38.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -175,6 +175,6 @@ CMakeFiles/Queue_Stack_38.dir/clean:
 .PHONY : CMakeFiles/Queue_Stack_38.dir/clean
 
 CMakeFiles/Queue_Stack_38.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Home\Desktop\DSA\DSA\LABOR34 C:\Users\Home\Desktop\DSA\DSA\LABOR34 C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug C:\Users\Home\Desktop\DSA\DSA\LABOR34\cmake-build-debug\CMakeFiles\Queue_Stack_38.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\FACULTATE\DSA\DSA\LABOR3 C:\FACULTATE\DSA\DSA\LABOR3 C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug C:\FACULTATE\DSA\DSA\LABOR3\cmake-build-debug\CMakeFiles\Queue_Stack_38.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Queue_Stack_38.dir/depend
 
