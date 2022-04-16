@@ -29,13 +29,22 @@ void Queue::push(TElem elem) {
         tuple<int,TElem> *aux;
         cap*=2;
         aux = new tuple<int,TElem>[cap];
+
         for(int i=0;i<cap;i++)
         {
             get<0>(aux[i])=NULL_TELEM;
             get<1>(aux[i])=NULL_TELEM;
         }
+
         for (int i = 0; i < size; i++)
             aux[i]=arr[i];
+
+        for (int i = 0; i < cap; i++)
+            if (get<0>(aux[i]) == NULL_TELEM)
+            {
+                first_empty = i;
+                break;
+            }
 
         delete[] arr;
         arr=aux;
