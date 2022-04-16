@@ -75,6 +75,7 @@ TElem Queue::top() const {
         throw exception();
     return get<1>(arr[head]);
 }
+
 TElem Queue::pop() {
 	//TODO - Implementation
 
@@ -88,44 +89,20 @@ TElem Queue::pop() {
         head=-1;
         first_empty=0;
         size--;
-    }
+    } else {
 
-    int nod=head;
-    first_empty=0;
-    if(nod != -1)
-    {
-        if(nod == head)
-        {
-            head=get<0>(arr[head]);
-        }
-        get<0>(arr[nod])=first_empty;
-        get<1>(arr[nod])=0;
-
-        first_empty=nod;
+        int old_pos = head;
+        first_empty = head;
+        head = get<0>(arr[head]);
+        get<0>(arr[old_pos]) = NULL_TELEM;
+        get<1>(arr[old_pos]) = NULL_TELEM;
         size--;
     }
-
-//
-
-//    if (size<cap/4)
-//    {
-//        tuple<int, TElem> *aux;
-//        cap /= 2;
-//        aux = new tuple<int,TElem>[cap];
-//        for(int i=0;i<cap;i++)
-//            get<0>(aux[i])=i;
-//        for (int i = 0; i < size; i++)
-//            aux[i] = arr[i];
-//
-//        delete[] arr;
-//        arr = aux;
-//    }
 
 
 
     return sters;
 
-//	return NULL_TELEM;
 }
 void Queue::print() {
     for (int i = 0; i <= size; i++)
