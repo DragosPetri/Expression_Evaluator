@@ -39,12 +39,7 @@ void Queue::push(TElem elem) {
         for (int i = 0; i < size; i++)
             aux[i]=arr[i];
 
-        for (int i = 0; i < cap; i++)
-            if (get<0>(aux[i]) == NULL_TELEM)
-            {
-                first_empty = i;
-                break;
-            }
+        first_empty = size;
 
         delete[] arr;
         arr=aux;

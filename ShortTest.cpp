@@ -1,6 +1,7 @@
 #include "ShortTest.h"
 #include "Queue.h"
 #include <assert.h>
+#include "Stack.h"
 
 void testAll() { 
 	Queue q;
@@ -16,4 +17,6 @@ void testAll() {
 	assert(q.top() == 10);
 	assert(q.pop() == 10);
 	assert(q.isEmpty() == true);
+
+    Stack s;
 }

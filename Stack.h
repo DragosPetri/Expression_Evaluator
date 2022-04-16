@@ -5,6 +5,7 @@ using namespace std;
 //DO NOT CHANGE THIS PART
 typedef int TElem;
 #define NULL_TELEM (-11111)
+#define nullpt (-1)
 
 
 class Stack
@@ -17,6 +18,7 @@ private:
     int tail;
     int next_empty;
     std::tuple<int,int,TElem> *arr;
+    void resize();
 
 public:
     //constructor
