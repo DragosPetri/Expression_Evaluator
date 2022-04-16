@@ -12,8 +12,10 @@ Queue::Queue() {
     size=0;
     head=-1;
     arr = new tuple<int,TElem>[cap];
-    for(int i=0;i<cap;i++)
-        get<0>(arr[i])=i;
+    for(int i=0;i<cap;i++) {
+        get<1>(arr[i]) = NULL_TELEM;
+        get<0>(arr[i]) = NULL_TELEM;
+    }
     first_empty=0;
 }
 
