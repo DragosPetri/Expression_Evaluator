@@ -1,3 +1,0 @@
-C:/FACULTATE/DSA/DSA/LABOR3/cmake-build-debug/CMakeFiles/Queue_Stack_38.dir
-C:/FACULTATE/DSA/DSA/LABOR3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/FACULTATE/DSA/DSA/LABOR3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
