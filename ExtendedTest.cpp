@@ -135,9 +135,9 @@ void testQuantity() {
 }
 
 void testAllExtended() {
-//	testCreate();
+	testCreate();
 	testPush();
-//	testPop();
-//	testMix();
-//	testQuantity();
+	testPop();
+	testMix();
+	testQuantity();
 }

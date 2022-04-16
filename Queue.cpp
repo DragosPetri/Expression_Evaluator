@@ -14,7 +14,6 @@ Queue::Queue() {
     arr = new tuple<int,TElem>[cap];
     for(int i=0;i<cap;i++)
         get<0>(arr[i])=i;
-    get<0>(arr[cap])=-1;
     first_empty=0;
 }
 
@@ -22,13 +21,14 @@ Queue::Queue() {
 void Queue::push(TElem elem) {
     //TODO - Implementation
 
-
     if(size==cap)
     {
         tuple<int,TElem> *aux;
         cap*=2;
         aux = new tuple<int,TElem>[cap];
-        for (int i = 0; i < size; i++)
+        for(int i=0;i<cap;i++)
+            get<0>(aux[i])=i;
+        for (int i = 0; i < size+1; i++)
             aux[i] = arr[i];
         delete[] arr;
         arr=aux;
@@ -47,13 +47,25 @@ void Queue::push(TElem elem) {
     else
 
     {
-        int newelem=first_empty;
-        get<0>(arr[newelem])=-1;
-        get<1>(arr[newelem])=elem;
-        get<0>(arr[newelem-1])=first_empty;
-        first_empty=first_empty+1;
+
+        get<0>(arr[first_empty])=-1;
+        get<1>(arr[first_empty])=elem;
+        get<0>(arr[first_empty-1])=first_empty;
+        if(first_empty<head)
+        {
+            get<0>(arr[first_empty])=first_empty+1;
+            head=first_empty;
+        }
+        while((first_empty != head && get<0>(arr[first_empty]) == -1) || (get<0>(arr[first_empty])==head && first_empty<head))
+        {
+            first_empty=first_empty+1;
+        }
+
         size++;
     }
+
+
+
 
 }
 
@@ -61,7 +73,7 @@ TElem Queue::top() const {
 	//TODO - Implementation
     if(isEmpty())
         throw exception();
-    return get<1>(arr[0]);
+    return get<1>(arr[head]);
 }
 TElem Queue::pop() {
 	//TODO - Implementation
@@ -71,35 +83,45 @@ TElem Queue::pop() {
 
     TElem sters = top();
 
+    if(size==1)
+    {
+        head=-1;
+        first_empty=0;
+        size--;
+    }
 
-    int nodc=head;
-    int prevnode=-1;
+    int nod=head;
+    first_empty=0;
+    if(nod != -1)
+    {
+        if(nod == head)
+        {
+            head=get<0>(arr[head]);
+        }
+        get<0>(arr[nod])=first_empty;
+        get<1>(arr[nod])=0;
 
-//    while(nodc!=-1 && get<1>(arr[nodc])!=get<1>(arr[0]))
+        first_empty=nod;
+        size--;
+    }
+
+//
+
+//    if (size<cap/4)
 //    {
-//        prevnode=nodc;
-//        nodc=get<0>(arr[nodc]);
+//        tuple<int, TElem> *aux;
+//        cap /= 2;
+//        aux = new tuple<int,TElem>[cap];
+//        for(int i=0;i<cap;i++)
+//            get<0>(aux[i])=i;
+//        for (int i = 0; i < size; i++)
+//            aux[i] = arr[i];
+//
+//        delete[] arr;
+//        arr = aux;
 //    }
 
 
-
-
-
-
-    size--;
-
-
-    if (size<=cap/4)
-    {
-        tuple<int, TElem> *aux;
-        cap /= 2;
-        aux = new tuple<int,TElem>[cap];
-        for (int i = 0; i < size; i++)
-            aux[i] = arr[i];
-
-        delete[] arr;
-        arr = aux;
-    }
 
     return sters;
 
