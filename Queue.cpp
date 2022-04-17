@@ -5,9 +5,8 @@
 
 using namespace std;
 
-
 Queue::Queue() {
-    //TODO - Implementation
+
     cap=5;
     size=0;
     head=-1;
@@ -22,7 +21,6 @@ Queue::Queue() {
 
 
 void Queue::push(TElem elem) {
-    //TODO - Implementation
 
     if(size==cap)
     {
@@ -80,14 +78,13 @@ void Queue::push(TElem elem) {
 
 
 TElem Queue::top() const {
-    //TODO - Implementation
+
     if(isEmpty())
         throw exception();
     return get<1>(arr[head]);
 }
 
 TElem Queue::pop() {
-    //TODO - Implementation
 
     if(isEmpty())
         throw exception();
@@ -125,14 +122,16 @@ void Queue::print() {
 
 }
 bool Queue::isEmpty() const {
-    //TODO - Implementation
+
     if(size==0)
         return true;
     return false;
+
 }
 
 
 Queue::~Queue() {
-    //TODO - Implementation
+
     delete[] arr;
+
 }
