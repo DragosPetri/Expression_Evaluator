@@ -1,6 +1,5 @@
 #include "Stack.h"
 
-
 Stack::Stack() {
     cap = 5;
     size = 0;
@@ -33,29 +32,56 @@ void Stack::Push(TElem e) {
         if (size == cap) resize();
 
         arr[next_empty] = make_tuple(head,nullpt,e);
+        get<1>(arr[head]) = next_empty;
         head = next_empty;
 
-        for (int i = 0; i < cap; i++)
-            if (get<0>(arr[i]) == NULL_TELEM)
-            {
-                next_empty = i;
-                break;
-            }
+        if (arr[next_empty]!= make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM)) {
+            for (int i = 0; i < cap; i++)
+                if (get<0>(arr[i]) == NULL_TELEM) {
+                    next_empty = i;
+                    break;
+                }
+        }
         size++;
     }
 
 };
 
 TElem Stack::Pop() {
-    //TODO IMPLEMENTATION
+
+    if (isEmpty()) throw exception();
+
+    TElem to_pop = Peek();
+
+    if (head == tail) {
+
+        arr[head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        head = tail = nullpt;
+        size--;
+        next_empty = 0;
+        return  to_pop;
+
+    } else {
+
+        int old_head = head;
+        head = get<0>(arr[head]);
+        get<1>(arr[head]) = nullpt;
+        arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        size--;
+        next_empty = old_head;
+        return to_pop;
+    }
+
 };
 
 TElem Stack::Peek() {
-    //TODO IMPLEMENTATION
+    if (!isEmpty()) return get<2>(arr[head]);
+    else return NULL_TELEM;
 };
 
 bool Stack::isEmpty() {
-    //TODO IMPLEMENTATION
+    if (head == nullpt) return true;
+    return false;
 }
 
 void Stack::resize() {

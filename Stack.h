@@ -1,5 +1,6 @@
 #pragma once
 #include <tuple>
+#include <exception>
 using namespace std;
 
 //DO NOT CHANGE THIS PART
