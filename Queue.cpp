@@ -1,6 +1,5 @@
 #include "Queue.h"
 #include <exception>
-#include <iostream>
 #include <tuple>
 
 using namespace std;
@@ -9,18 +8,17 @@ Queue::Queue() {
 
     cap=5;
     size=0;
-    head=-1;
+    head=nullpt;
     arr = new tuple<int,TElem>[cap];
     for(int i=0;i<cap;i++)
     {
-        get<1>(arr[i]) = NULL_TELEM;
-        get<0>(arr[i]) = NULL_TELEM;
+        arr[i] = make_tuple(NULL_TELEM,NULL_TELEM);
     }
     first_empty=0;
 }
 
 
-void Queue::push(TElem elem) {
+void Queue::push(TElem e) {
 
     if(size==cap)
     {
@@ -46,30 +44,31 @@ void Queue::push(TElem elem) {
     if ( head == -1 )
 
     {
-        get<1>(arr[first_empty])=elem;
-        get<0>(arr[first_empty])=-1;
+        get<element>(arr[first_empty])=e;
+        get<next_e>(arr[first_empty])=nullpt;
         head=first_empty;
-        first_empty=first_empty+1;
+        first_empty++;
         size++;
     }
     else
     {
         int nod = head;
-        while (get<0>(arr[nod]) != -1)
+        while (get<next_e>(arr[nod]) != nullpt)
         {
-            nod = get<0>(arr[nod]);
+            nod = get<next_e>(arr[nod]);
         }
 
-        get<0>(arr[nod]) = first_empty;
-        get<1>(arr[first_empty]) = elem;
-        get<0>(arr[first_empty]) = -1;
+        get<next_e>(arr[nod]) = first_empty;
+        get<element>(arr[first_empty]) = e;
+        get<next_e>(arr[first_empty]) = nullpt;
 
-        for (int i = 0; i < cap; i++)
-            if (get<0>(arr[i]) == NULL_TELEM)
-            {
-                first_empty = i;
-                break;
-            }
+        if (arr[first_empty]!= make_tuple(NULL_TELEM,NULL_TELEM)) {
+            for (int i = 0; i < cap; i++)
+                if (get<next_e>(arr[i]) == NULL_TELEM) {
+                    first_empty = i;
+                    break;
+                }
+        }
         size++;
     }
 
@@ -81,7 +80,7 @@ TElem Queue::top() const {
 
     if(isEmpty())
         throw exception();
-    return get<1>(arr[head]);
+    return get<element>(arr[head]);
 }
 
 TElem Queue::pop() {
@@ -93,9 +92,9 @@ TElem Queue::pop() {
 
     if(size==1)
     {
-        get<0>(arr[head]) = NULL_TELEM;
-        get<1>(arr[head]) = NULL_TELEM;
-        head=-1;
+        get<next_e>(arr[head]) = NULL_TELEM;
+        get<element>(arr[head]) = NULL_TELEM;
+        head=nullpt;
         first_empty=0;
         size--;
     }
@@ -104,23 +103,16 @@ TElem Queue::pop() {
 
         int old_pos = head;
         first_empty = head;
-        head = get<0>(arr[head]);
-        get<0>(arr[old_pos]) = NULL_TELEM;
-        get<1>(arr[old_pos]) = NULL_TELEM;
+        head = get<next_e>(arr[head]);
+        get<next_e>(arr[old_pos]) = NULL_TELEM;
+        get<element>(arr[old_pos]) = NULL_TELEM;
         size--;
     }
 
-
-
-
     return sters;
-
 }
-void Queue::print() {
-    for (int i = 0; i <= size; i++)
-        cout<<get<1>(arr[i])<<" ";
 
-}
+
 bool Queue::isEmpty() const {
 
     if(size==0)

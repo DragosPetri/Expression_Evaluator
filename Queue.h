@@ -6,6 +6,9 @@ using namespace std;
 //DO NOT CHANGE THIS PART
 typedef int TElem;
 #define NULL_TELEM (-11111)
+#define element (1)
+#define next_e (0)
+#define nullpt (-1)
 
 class Queue
 {
@@ -21,7 +24,7 @@ public:
 
 	//pushes an element to the end of the queue
 	void push(TElem e);
-    void print();
+
 	//returns the element from the front of the queue
 	//throws exception if the queue is empty
 	TElem top() const;

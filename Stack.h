@@ -7,6 +7,9 @@ using namespace std;
 typedef int TElem;
 #define NULL_TELEM (-11111)
 #define nullpt (-1)
+#define next_e (1)
+#define prev_e (0)
+#define element (2)
 
 
 class Stack

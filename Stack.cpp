@@ -32,12 +32,12 @@ void Stack::Push(TElem e) {
         if (size == cap) resize();
 
         arr[next_empty] = make_tuple(head,nullpt,e);
-        get<1>(arr[head]) = next_empty;
+        get<next_e>(arr[head]) = next_empty;
         head = next_empty;
 
         if (arr[next_empty]!= make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM)) {
             for (int i = 0; i < cap; i++)
-                if (get<0>(arr[i]) == NULL_TELEM) {
+                if (get<prev_e>(arr[i]) == NULL_TELEM) {
                     next_empty = i;
                     break;
                 }
@@ -64,8 +64,8 @@ TElem Stack::Pop() {
     } else {
 
         int old_head = head;
-        head = get<0>(arr[head]);
-        get<1>(arr[head]) = nullpt;
+        head = get<prev_e>(arr[head]);
+        get<next_e>(arr[head]) = nullpt;
         arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
         size--;
         next_empty = old_head;
@@ -75,7 +75,7 @@ TElem Stack::Pop() {
 };
 
 TElem Stack::Peek() {
-    if (!isEmpty()) return get<2>(arr[head]);
+    if (!isEmpty()) return get<element>(arr[head]);
     else return NULL_TELEM;
 };
 
