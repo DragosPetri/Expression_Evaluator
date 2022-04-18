@@ -1,6 +1,7 @@
 #include <string>
 #include "Stack.h"
 #include <iostream>
+#include <cmath>
 
 class Solver {
 

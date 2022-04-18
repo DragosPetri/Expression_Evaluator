@@ -74,5 +74,37 @@ string Solver::infix_to_postix(string infix) {
 }
 
 string Solver::eval_postfix(string postfix) {
-    return std::string();
+    Stack s;
+    string num;
+    for (int i = 0; i < postfix.length() ; i++) {
+
+            if (isalnum(postfix[i])) {
+               num.push_back(postfix[i]);
+            } else {
+                if (num!="")
+                s.Push(num);
+                num="";
+                if (postfix[i]!=' ') {
+                    string val1 = s.Pop();
+                    string val2 = s.Pop();
+                    switch (postfix[i])
+                    {
+                        case '+':
+                            s.Push(to_string((stoi(val2) + stoi(val1)))); break;
+                        case '-':
+                            s.Push(to_string((stoi(val2) - stoi(val1)))); break;
+                        case '*':
+                            s.Push(to_string((stoi(val2) * stoi(val1)))); break;
+                        case '/':
+                            s.Push(to_string((stoi(val2) / stoi(val1)))); break;
+                        case '^' :
+                            s.Push(to_string(int(pow(stoi(val2),stoi(val1)))));break;
+                    }
+                }
+
+            }
+
+    }
+
+    return s.Pop();
 }

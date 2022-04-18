@@ -10,7 +10,8 @@ int main() {
 	testAll();
 	//testAllExtended();
     Solver s;
-    cout<<s.infix_to_postix("a+b*(c^d-e)^(f+g*h)-i")<<endl;
+    string s1 = s.infix_to_postix("9-5");
+    cout<<s.eval_postfix(s1)<<'\n';
 
 	cout << "Test end" << endl;
 
