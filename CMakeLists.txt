@@ -11,5 +11,7 @@ add_executable(Queue_Stack_38
         ExtendedTest.h
         Queue.cpp
         Queue.h
+        Solver.h
+        Solver.cpp
         ShortTest.cpp
         ShortTest.h Stack.cpp Stack.h)
