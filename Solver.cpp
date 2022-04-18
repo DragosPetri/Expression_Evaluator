@@ -28,7 +28,6 @@ string Solver::infix_to_postix(string infix) {
         if (isalnum(c))
         {
             postfix += c;
-            postfix += " ";
         }
         else if (c == '(')
         {
@@ -38,7 +37,8 @@ string Solver::infix_to_postix(string infix) {
         else if (c == ')')
         {
             std::string s1(1,'(');
-            while (s.Peek() != s1){
+            while (s.Peek() != s1)
+            {
                 postfix += s.Peek();
                 postfix += " ";
                 if(!s.isEmpty()) s.Pop();
@@ -46,6 +46,7 @@ string Solver::infix_to_postix(string infix) {
             s.Pop();
         }
         else {
+            postfix += " ";
             std::string s2(1, infix[i]);
             while (!s.isEmpty() && isoperator(s2) <= isoperator(s.Peek()))
             {
@@ -68,6 +69,7 @@ string Solver::infix_to_postix(string infix) {
         postfix += s.Peek();
         postfix += " ";
         s.Pop();
+
     }
 
     return postfix;
