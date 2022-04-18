@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
 	testAll();
-	testAllExtended();
+	//testAllExtended();
 
 	cout << "Test end" << endl;
 

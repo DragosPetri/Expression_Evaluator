@@ -20,15 +20,15 @@ void testAll() {
 
     Stack s;
     assert(s.isEmpty());
-    s.Push(5);
-    s.Push(1);
-    s.Push(10);
+    s.Push("5");
+    s.Push("1");
+    s.Push("10");
     assert(s.isEmpty() == false);
-    assert(s.Peek() == 10);
-    assert(s.Pop() == 10);
-    assert(s.Peek() == 1);
-    assert(s.Pop() == 1);
-    assert(s.Peek() == 5);
-    assert(s.Pop() == 5);
+    assert(s.Peek() == "10");
+    assert(s.Pop() == "10");
+    assert(s.Peek() == "1");
+    assert(s.Pop() == "1");
+    assert(s.Peek() == "5");
+    assert(s.Pop() == "5");
     assert(s.isEmpty() == true);
 }

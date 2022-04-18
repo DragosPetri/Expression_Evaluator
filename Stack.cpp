@@ -6,10 +6,10 @@ Stack::Stack() {
     head = nullpt;
     tail = nullpt;
     next_empty = 0;
-    arr = new tuple<int,int,TElem>[cap];
+    arr = new tuple<int,int,TElem2>[cap];
     for(int i=0;i<cap;i++)
     {
-        arr[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        arr[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
     }
 }
 
@@ -17,7 +17,7 @@ Stack::~Stack() {
     delete[] arr;
 };
 
-void Stack::Push(TElem e) {
+void Stack::Push(TElem2 e) {
 
     if (head==nullpt) {
 
@@ -35,7 +35,7 @@ void Stack::Push(TElem e) {
         get<next_e>(arr[head]) = next_empty;
         head = next_empty;
 
-        if (arr[next_empty]!= make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM)) {
+        if (arr[next_empty]!= make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING)) {
             for (int i = 0; i < cap; i++)
                 if (get<prev_e>(arr[i]) == NULL_TELEM) {
                     next_empty = i;
@@ -47,15 +47,15 @@ void Stack::Push(TElem e) {
 
 };
 
-TElem Stack::Pop() {
+TElem2 Stack::Pop() {
 
     if (isEmpty()) throw exception();
 
-    TElem to_pop = Peek();
+    TElem2 to_pop = Peek();
 
     if (head == tail) {
 
-        arr[head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        arr[head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
         head = tail = nullpt;
         size--;
         next_empty = 0;
@@ -66,7 +66,7 @@ TElem Stack::Pop() {
         int old_head = head;
         head = get<prev_e>(arr[head]);
         get<next_e>(arr[head]) = nullpt;
-        arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
         size--;
         next_empty = old_head;
         return to_pop;
@@ -74,9 +74,9 @@ TElem Stack::Pop() {
 
 };
 
-TElem Stack::Peek() {
+TElem2 Stack::Peek() {
     if (!isEmpty()) return get<element>(arr[head]);
-    else return NULL_TELEM;
+    else return NULL_STRING;
 };
 
 bool Stack::isEmpty() {
@@ -87,11 +87,11 @@ bool Stack::isEmpty() {
 void Stack::resize() {
 
     cap*=2;
-    tuple<int,int,TElem> *aux = new tuple<int,int,TElem>[cap];
+    tuple<int,int,TElem2> *aux = new tuple<int,int,TElem2>[cap];
 
     for(int i=0;i<cap;i++)
     {
-        aux[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_TELEM);
+        aux[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
     }
 
     for (int i = 0; i < size; i++)
