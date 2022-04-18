@@ -21,24 +21,55 @@ int Solver::isoperator(string c) {
 
 string Solver::infix_to_postix(string infix) {
     Stack s;
+    string postfix;
 
-    string postfix = "";//string unde  ne salvam rezultatul
-
-    for(int i=0;i<infix.length();i++)
-    { //parcurgem expresia in infix
-        char c = infix.at(i);
+    for (int i = 0; i < infix.length(); i++) {
+        char c = infix[i];
         if (isalnum(c))
+        {
             postfix += c;
+            postfix += " ";
+        }
         else if (c == '(')
-            s.Push(to_string(c));
-        else if (c == ')') {
-            while (s.Peek() != "(") {
+        {
+            std::string s1(1,c);
+            s.Push(s1);
+        }
+        else if (c == ')')
+        {
+            std::string s1(1,'(');
+            while (s.Peek() != s1){
                 postfix += s.Peek();
-                s.Pop();
+                postfix += " ";
+                if(!s.isEmpty()) s.Pop();
             }
             s.Pop();
         }
+        else {
+            std::string s2(1, infix[i]);
+            while (!s.isEmpty() && isoperator(s2) <= isoperator(s.Peek()))
+            {
+                if (c == '^' && s.Peek() == "^")
+                    break;
+                else
+                {
+                    postfix += s.Peek();
+                    postfix += " ";
+                    s.Pop();
+                }
+            }
+            std::string s1(1,c);
+            s.Push(s1);
+        }
     }
+
+    while (!s.isEmpty())
+    {
+        postfix += s.Peek();
+        postfix += " ";
+        s.Pop();
+    }
+
     return postfix;
 }
 
