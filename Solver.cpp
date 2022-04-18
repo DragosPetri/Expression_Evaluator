@@ -1,14 +1,7 @@
 #include "Solver.h"
 
-Solver::Solver() {
-
-}
-
-Solver::~Solver() {
-
-}
-
 int Solver::isoperator(string c) {
+
     if ( c=="^")
         return 3;
     else if (c=="*" || c=="/")
@@ -17,9 +10,15 @@ int Solver::isoperator(string c) {
         return 1;
     else
         return -1;
+
+    /*
+    * Θ(1)
+    */
+
 }
 
 string Solver::infix_to_postix(string infix) {
+
     Stack s;
     string postfix;
 
@@ -31,12 +30,12 @@ string Solver::infix_to_postix(string infix) {
         }
         else if (c == '(')
         {
-            std::string s1(1,c);
+            string s1(1,c);
             s.Push(s1);
         }
         else if (c == ')')
         {
-            std::string s1(1,'(');
+            string s1(1,'(');
             while (s.Peek() != s1)
             {
                 postfix += s.Peek();
@@ -47,7 +46,7 @@ string Solver::infix_to_postix(string infix) {
         }
         else {
             postfix += " ";
-            std::string s2(1, infix[i]);
+            string s2(1, infix[i]);
             while (!s.isEmpty() && isoperator(s2) <= isoperator(s.Peek()))
             {
                 if (c == '^' && s.Peek() == "^")
@@ -59,7 +58,7 @@ string Solver::infix_to_postix(string infix) {
                     s.Pop();
                 }
             }
-            std::string s1(1,c);
+            string s1(1,c);
             s.Push(s1);
         }
     }
@@ -69,15 +68,23 @@ string Solver::infix_to_postix(string infix) {
         postfix += s.Peek();
         postfix += " ";
         s.Pop();
-
     }
 
     return postfix;
+
+    /*
+     * n = length of the string 'infix'
+     * Best Case: Θ(n)
+     * Worst case: Θ(n)
+     * Average Case: Θ(n)
+     */
 }
 
 string Solver::eval_postfix(string postfix) {
+
     Stack s;
     string num;
+
     for (int i = 0; i < postfix.length() ; i++) {
 
             if (isalnum(postfix[i])) {
@@ -92,21 +99,33 @@ string Solver::eval_postfix(string postfix) {
                     switch (postfix[i])
                     {
                         case '+':
-                            s.Push(to_string((stoi(val2) + stoi(val1)))); break;
+                            s.Push(to_string((stoi(val2) + stoi(val1))));
+                            break;
                         case '-':
-                            s.Push(to_string((stoi(val2) - stoi(val1)))); break;
+                            s.Push(to_string((stoi(val2) - stoi(val1))));
+                            break;
                         case '*':
-                            s.Push(to_string((stoi(val2) * stoi(val1)))); break;
+                            s.Push(to_string((stoi(val2) * stoi(val1))));
+                            break;
                         case '/':
-                            s.Push(to_string((stoi(val2) / stoi(val1)))); break;
+                            s.Push(to_string((stoi(val2) / stoi(val1))));
+                            break;
                         case '^' :
-                            s.Push(to_string(int(pow(stoi(val2),stoi(val1)))));break;
+                            s.Push(to_string(int(pow(stoi(val2),stoi(val1)))));
+                            break;
                     }
                 }
 
             }
 
     }
+
+    /*
+     * n = length of the string 'postfix'
+     * Best Case: Θ(n)
+     * Worst case: Θ(n)
+     * Average Case: Θ(n)
+     */
 
     return s.Pop();
 }

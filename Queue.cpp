@@ -72,6 +72,12 @@ void Queue::push(TElem e) {
         size++;
     }
 
+    /*
+     * Best Case: Θ(1)
+     * Worst case: Θ(2n)
+     * Average Case: O(n)
+     */
+
 }
 
 
@@ -81,6 +87,10 @@ TElem Queue::top() const {
     if(isEmpty())
         throw exception();
     return get<element>(arr[head]);
+
+    /*
+    * Θ(1)
+    */
 }
 
 TElem Queue::pop() {
@@ -110,6 +120,10 @@ TElem Queue::pop() {
     }
 
     return sters;
+
+    /*
+    * Θ(1)
+    */
 }
 
 
@@ -119,6 +133,9 @@ bool Queue::isEmpty() const {
         return true;
     return false;
 
+    /*
+    * Θ(1)
+    */
 }
 
 
@@ -126,4 +143,7 @@ Queue::~Queue() {
 
     delete[] arr;
 
+    /*
+    * Θ(1)
+    */
 }

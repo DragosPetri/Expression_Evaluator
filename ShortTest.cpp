@@ -2,6 +2,7 @@
 #include "Queue.h"
 #include <assert.h>
 #include "Stack.h"
+#include "Solver.h"
 
 void testAll() { 
 	Queue q;
@@ -31,4 +32,17 @@ void testAll() {
     assert(s.Peek() == "5");
     assert(s.Pop() == "5");
     assert(s.isEmpty() == true);
+}
+
+void testSolver(){
+
+    Solver s;
+    string s1 = s.infix_to_postix("7^2+5+12-5+4/2");
+    assert(s.eval_postfix(s1)=="63");
+    s1 = "100 200 + 2 / 5 * 7 +";
+    assert(s.eval_postfix(s1)=="757");
+    s1 = s.infix_to_postix("3^3+4^2-16-37");
+    assert(s.eval_postfix(s1)=="-10");
+
+    cout<<"Solver Test end!"<<'\n';
 }

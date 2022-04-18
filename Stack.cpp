@@ -14,7 +14,12 @@ Stack::Stack() {
 }
 
 Stack::~Stack() {
+
     delete[] arr;
+
+    /*
+    * Θ(1)
+    */
 };
 
 void Stack::Push(TElem2 e) {
@@ -45,6 +50,12 @@ void Stack::Push(TElem2 e) {
         size++;
     }
 
+    /*
+     * Best Case: Θ(1)
+     * Worst case: Θ(n)
+     * Average Case: O(n)
+     */
+
 };
 
 TElem2 Stack::Pop() {
@@ -72,16 +83,30 @@ TElem2 Stack::Pop() {
         return to_pop;
     }
 
+    /*
+    * Θ(1)
+    */
+
+
 };
 
 TElem2 Stack::Peek() {
     if (!isEmpty()) return get<element>(arr[head]);
     else return NULL_STRING;
+
+    /*
+    * Θ(1)
+    */
+
 };
 
 bool Stack::isEmpty() {
     if (head == nullpt) return true;
     return false;
+    /*
+    * Θ(1)
+    */
+
 }
 
 void Stack::resize() {
