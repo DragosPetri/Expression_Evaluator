@@ -20,26 +20,6 @@ Queue::Queue() {
 
 void Queue::push(TElem e) {
 
-    if(size==cap)
-    {
-        tuple<int,TElem> *aux;
-        cap*=2;
-        aux = new tuple<int,TElem>[cap];
-
-        for(int i=0;i<cap;i++)
-        {
-            get<0>(aux[i])=NULL_TELEM;
-            get<1>(aux[i])=NULL_TELEM;
-        }
-
-        for (int i = 0; i < size; i++)
-            aux[i]=arr[i];
-
-        first_empty = size;
-
-        delete[] arr;
-        arr=aux;
-    }
 
     if ( head == -1 )
 
@@ -70,6 +50,27 @@ void Queue::push(TElem e) {
                 }
         }
         size++;
+    }
+
+    if(size==cap)
+    {
+        tuple<int,TElem> *aux;
+        cap*=2;
+        aux = new tuple<int,TElem>[cap];
+
+        for(int i=0;i<cap;i++)
+        {
+            get<0>(aux[i])=NULL_TELEM;
+            get<1>(aux[i])=NULL_TELEM;
+        }
+
+        for (int i = 0; i < size; i++)
+            aux[i]=arr[i];
+
+        first_empty = size;
+
+        delete[] arr;
+        arr=aux;
     }
 
     /*
@@ -112,12 +113,13 @@ TElem Queue::pop() {
     {
 
         int old_pos = head;
-        first_empty = head;
         head = get<next_e>(arr[head]);
         get<next_e>(arr[old_pos]) = NULL_TELEM;
         get<element>(arr[old_pos]) = NULL_TELEM;
         size--;
     }
+
+    if (size <= cap/4 && cap>5) size_down();
 
     return sters;
 
@@ -136,6 +138,42 @@ bool Queue::isEmpty() const {
     /*
     * Θ(1)
     */
+}
+
+void Queue::size_down() {
+
+    cap/=2;
+    tuple<int,TElem> *aux = new tuple<int,TElem>[cap];
+
+    for(int i=0;i<cap;i++)
+    {
+        aux[i] = make_tuple(NULL_TELEM,NULL_TELEM);
+    }
+
+    int ct = 0;
+    int nod = head;
+    while (get<next_e>(arr[nod]) != nullpt)
+    {
+        aux[ct] = arr[nod];
+        ct++;
+        nod = get<next_e>(arr[nod]);
+    }
+
+    aux[ct] = arr[nod];
+    int next = 1;
+    ct = 0;
+
+    while (get<element>(aux[ct])!=NULL_TELEM) {
+        get<next_e>(aux[ct]) = next;
+        next++;
+        ct++;
+    }
+    get<next_e>(aux[ct-1]) = nullpt;
+    first_empty = ct;
+    head = 0;
+
+    delete[] arr;
+    arr=aux;
 }
 
 

@@ -18,6 +18,7 @@ private:
     int head;
     int first_empty;
     std::tuple<int, TElem> *arr;
+    void size_down();
 
 public:
 	Queue();

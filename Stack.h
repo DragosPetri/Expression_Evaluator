@@ -25,6 +25,7 @@ private:
     int next_empty;
     std::tuple<int,int,TElem2> *arr;
     void resize();
+    void size_down();
 
 public:
     //constructor

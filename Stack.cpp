@@ -80,8 +80,11 @@ TElem2 Stack::Pop() {
         arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
         size--;
         next_empty = old_head;
+        if (size <= cap/4 && cap>5) size_down();
         return to_pop;
     }
+
+
 
     /*
     * Θ(1)
@@ -128,3 +131,42 @@ void Stack::resize() {
     arr=aux;
 
 };
+
+void Stack::size_down() {
+
+    cap/=2;
+    tuple<int,int,TElem2> *aux = new tuple<int,int,TElem2>[cap];
+
+    for(int i=0;i<cap;i++)
+    {
+        aux[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
+    }
+
+    int ct = 0;
+    int nod = head;
+    while (get<next_e>(arr[nod]) != nullpt)
+    {
+        aux[ct] = arr[nod];
+        ct++;
+        nod = get<next_e>(arr[nod]);
+    }
+
+    aux[ct] = arr[nod];
+
+    int prev = nullpt;
+    int next = 1;
+    ct = 0;
+    while (get<element>(aux[ct])!=NULL_STRING) {
+        get<prev_e>(aux[ct]) = prev;
+        get<next_e>(aux[ct]) = next;
+        prev++;
+        next++;
+        ct++;
+    }
+    get<next_e>(aux[ct-1]) = nullpt;
+    next_empty = ct;
+    head = 0;
+
+    delete[] arr;
+    arr=aux;
+}
