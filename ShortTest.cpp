@@ -43,6 +43,13 @@ void testSolver(){
     assert(s.eval_postfix(s1)=="757");
     s1 = s.infix_to_postix("3^3+4^2-16-37");
     assert(s.eval_postfix(s1)=="-10");
+    s1 = "1+2+3+4+5+6+7+8";
+    s1 = s.infix_to_postix(s1);
+    assert(s1==string(R"(1 2 + 3 + 4 + 5 + 6 + 7 + 8+ )"));
+    s1 = s.infix_to_postix(s1);
+    assert(s.eval_postfix(s1)=="36");
+    s1 = "2*(3+5)/2+3";
+    assert(s.eval_postfix(s.infix_to_postix(s1))=="11");
 
     cout<<"Solver Test end!"<<'\n';
 }

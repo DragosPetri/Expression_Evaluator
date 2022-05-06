@@ -12,7 +12,7 @@ Queue::Queue() {
     arr = new tuple<int,TElem>[cap];
     for(int i=0;i<cap;i++)
     {
-        arr[i] = make_tuple(NULL_TELEM,NULL_TELEM);
+        arr[i] = make_tuple(i+1,NULL_TELEM);
     }
     first_empty=0;
 }
@@ -40,15 +40,10 @@ void Queue::push(TElem e) {
 
         get<next_e>(arr[nod]) = first_empty;
         get<element>(arr[first_empty]) = e;
-        get<next_e>(arr[first_empty]) = nullpt;
+        int pos = first_empty;
+        first_empty = get<next_e>(arr[first_empty]);
+        get<next_e>(arr[pos]) = nullpt;
 
-        if (arr[first_empty]!= make_tuple(NULL_TELEM,NULL_TELEM)) {
-            for (int i = 0; i < cap; i++)
-                if (get<next_e>(arr[i]) == NULL_TELEM) {
-                    first_empty = i;
-                    break;
-                }
-        }
         size++;
     }
 
@@ -60,7 +55,7 @@ void Queue::push(TElem e) {
 
         for(int i=0;i<cap;i++)
         {
-            get<0>(aux[i])=NULL_TELEM;
+            get<0>(aux[i])=i+1;
             get<1>(aux[i])=NULL_TELEM;
         }
 
@@ -75,7 +70,7 @@ void Queue::push(TElem e) {
 
     /*
      * Best Case: Θ(1)
-     * Worst case: Θ(2n)
+     * Worst case: Θ(n)
      * Average Case: O(n)
      */
 
@@ -103,7 +98,7 @@ TElem Queue::pop() {
 
     if(size==1)
     {
-        get<next_e>(arr[head]) = NULL_TELEM;
+        get<next_e>(arr[head]) = 1;
         get<element>(arr[head]) = NULL_TELEM;
         head=nullpt;
         first_empty=0;
@@ -114,7 +109,8 @@ TElem Queue::pop() {
 
         int old_pos = head;
         head = get<next_e>(arr[head]);
-        get<next_e>(arr[old_pos]) = NULL_TELEM;
+        get<next_e>(arr[old_pos]) = first_empty;
+        first_empty = old_pos;
         get<element>(arr[old_pos]) = NULL_TELEM;
         size--;
     }
@@ -178,7 +174,6 @@ void Queue::size_down() {
 
 
 Queue::~Queue() {
-
     delete[] arr;
 
     /*

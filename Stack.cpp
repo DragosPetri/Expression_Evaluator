@@ -9,7 +9,7 @@ Stack::Stack() {
     arr = new tuple<int,int,TElem2>[cap];
     for(int i=0;i<cap;i++)
     {
-        arr[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
+        arr[i] = make_tuple(i-1,i+1,NULL_STRING);
     }
 }
 
@@ -36,17 +36,12 @@ void Stack::Push(TElem2 e) {
 
         if (size == cap) resize();
 
-        arr[next_empty] = make_tuple(head,nullpt,e);
-        get<next_e>(arr[head]) = next_empty;
-        head = next_empty;
+        int pos = next_empty;
+        next_empty = get<next_e>(arr[next_empty]);
+        arr[pos] = make_tuple(head,nullpt,e);
+        get<next_e>(arr[head]) = pos;
+        head = pos;
 
-        if (arr[next_empty]!= make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING)) {
-            for (int i = 0; i < cap; i++)
-                if (get<prev_e>(arr[i]) == NULL_TELEM) {
-                    next_empty = i;
-                    break;
-                }
-        }
         size++;
     }
 
@@ -66,7 +61,7 @@ TElem2 Stack::Pop() {
 
     if (head == tail) {
 
-        arr[head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
+        arr[head] = make_tuple(nullpt,1,NULL_STRING);
         head = tail = nullpt;
         size--;
         next_empty = 0;
@@ -77,7 +72,7 @@ TElem2 Stack::Pop() {
         int old_head = head;
         head = get<prev_e>(arr[head]);
         get<next_e>(arr[head]) = nullpt;
-        arr[old_head] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
+        arr[old_head] = make_tuple(NULL_TELEM,next_empty,NULL_STRING);
         size--;
         next_empty = old_head;
         if (size <= cap/4 && cap>5) size_down();
@@ -119,7 +114,7 @@ void Stack::resize() {
 
     for(int i=0;i<cap;i++)
     {
-        aux[i] = make_tuple(NULL_TELEM,NULL_TELEM,NULL_STRING);
+        aux[i] = make_tuple(i-1,i+1,NULL_STRING);
     }
 
     for (int i = 0; i < size; i++)
